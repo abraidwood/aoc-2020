@@ -1,9 +1,6 @@
-const fs = require('fs');
-const { run } = require('./utils');
+const { run, readFile } = require('./utils');
 
-const values = fs.readFileSync('data/day3.txt', { encoding: 'utf-8' })
-    .trim()
-    .split('\n');
+const values = readFile('data/day3.txt', { encoding: 'utf-8' });
 
 const yLimit = values.length;
 const xLimit = values[0].length;
