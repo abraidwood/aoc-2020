@@ -2,7 +2,7 @@ const { run, readFile } = require('./utils');
 
 const parser = /^(\d+)-(\d+)\s+([a-z]):\s+([a-z]+)$/;
 
-const values = readFile('data/day2.txt', { encoding: 'utf-8' });
+const values = readFile('data/day2.txt');
 
 function day2part1() {
     return values.filter(str => {

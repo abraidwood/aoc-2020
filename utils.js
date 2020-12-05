@@ -8,6 +8,6 @@ module.exports = {
         console.log(fn.name, result, `${(performance.now() - t1).toFixed(2)}ms`)
     },
 
-    readFile: path =>
-        fs.readFileSync(path, { encoding: 'utf-8' }).trim().split('\n')
+    readFile: (path, { delimiter = '\n' } = {}) =>
+        fs.readFileSync(path, { encoding: 'utf-8' }).trim().split(delimiter)
 }

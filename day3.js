@@ -1,6 +1,6 @@
 const { run, readFile } = require('./utils');
 
-const values = readFile('data/day3.txt', { encoding: 'utf-8' });
+const values = readFile('data/day3.txt');
 
 const yLimit = values.length;
 const xLimit = values[0].length;
@@ -8,10 +8,9 @@ const xLimit = values[0].length;
 function calculateCollisions(xInc, yInc) {
     let collisions = 0;
 
-    for (let x = 0, y = 0; y < yLimit; y += yInc) {
+    for (let x = 0, y = 0; y < yLimit; x += xInc, y += yInc) {
         const row = values[y];
         collisions += row[x % xLimit] === '#' ? 1 : 0;
-        x += xInc;
     }
     return collisions;
 }
