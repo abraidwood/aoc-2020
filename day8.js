@@ -57,7 +57,7 @@ function day8part2() {
     const mem = process(lines);
     let swapPtr = 0;
 
-    while (swapPtr < mem.length - 1) {
+    while (swapPtr < mem.length) {
         const { op, step } = mem[swapPtr];
 
         if (op === 'acc') {
