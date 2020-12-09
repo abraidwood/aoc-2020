@@ -16,9 +16,7 @@ function day6part1() {
             return value;
         }
 
-        if (preambleList.length === preambleLength) {
-            preambleSet.delete(preambleList.shift());
-        }
+        preambleSet.delete(preambleList.shift());
         preambleList.push(value);
         preambleSet.add(value);
     }
