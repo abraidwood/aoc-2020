@@ -25,20 +25,20 @@ function day6part1() {
 }
 
 function day6part2() {
-    const result = 36845998;
+    const result = day6part1();
     let start = 0;
-    let end = 1;
+    let end = 0;
+    let sum = values[start];
 
-    while (true) {
-        const list = values.slice(start, end);
-        const sum = list.reduce((a, v) => a + v, 0);
-
+    while (start < values.length && end < values.length) {
         if (sum < result) {
             end += 1;
+            sum += values[end];
         } else if (sum > result) {
+            sum -= values[start];
             start += 1;
         } else {
-            list.sort((a, b) => a - b);
+            const list = values.slice(start, end + 1).sort();
             return list[0] + list[list.length - 1];
         }
     }
